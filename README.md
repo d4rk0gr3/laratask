@@ -1,5 +1,5 @@
 # Laratask
-Simple task's list project used to demostrate Laravel functionality
+Simple task list project used to demostrate Laravel functionality
 
 
 ### Usage
