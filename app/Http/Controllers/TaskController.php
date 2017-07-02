@@ -16,7 +16,7 @@ class TaskController extends Controller
     public function index() {
         $tasks = Task::orderBy('created_at', 'asc')->get();
 
-        return view('tasks.tasks', ['tasks' => $tasks]);
+        return view('tasks.index', ['tasks' => $tasks]);
     }
 
     /**
@@ -49,7 +49,7 @@ class TaskController extends Controller
         $task->name = $request->name;
         $task->save();
 
-        return redirect('/tasks');
+        return redirect('tasks');
     }
 
 
@@ -72,6 +72,17 @@ class TaskController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|max:255'
+        ]);
+        if ($validator->fails()) {
+            return redirect('tasks/'. $id . '/edit')
+                ->withInput()
+                ->withErrors($validator);
+        }
+
+
         $task = Task::find($id);
         $task->name = $request->name;
         $task->save();
@@ -88,6 +99,6 @@ class TaskController extends Controller
     public function destroy($id) {
         Task::findOrFail($id)->delete();
 
-        return redirect('/tasks');
+        return redirect('tasks');
     }
 }

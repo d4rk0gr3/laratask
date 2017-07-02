@@ -13,7 +13,8 @@
                 <input type="text" name="name" id="task-name" class="form-control" placeholder="New Task">
                 <span class="input-group-btn">
                     <button type="submit" class="btn btn-default">
-                        <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> Add Task</button>
+                        <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> Add Task
+                    </button>
                 </span>
             </div>
         </form>
@@ -40,8 +41,10 @@
                                 <td>
                                     <div class="pull-right">
                                         <div class="btn-group">
-                                            <a class="btn btn-info btn-block" role="button" href="/tasks/{{ $task->id }}/edit">
-                                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit Task
+                                            <a class="btn btn-info btn-block" role="button"
+                                               href="/tasks/{{ $task->id }}/edit">
+                                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit
+                                                Task
                                             </a>
                                         </div>
 
