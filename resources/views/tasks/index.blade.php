@@ -52,12 +52,14 @@
                                             <form action="/tasks/{{ $task->id }}" method="POST">
                                                 {{ csrf_field() }}
                                                 {{ method_field('DELETE') }}
-                                                <button type="button" class="btn btn-danger btn-block">
+                                                <button type="submit" class="btn btn-danger btn-block">
                                                     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                                                     Delete Task
                                                 </button>
                                             </form>
                                         </div>
+
+
                                     </div>
                                 </td>
                             </tr>
